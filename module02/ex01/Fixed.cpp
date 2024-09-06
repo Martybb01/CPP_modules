@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:27:06 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/05 11:21:00 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:39:06 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,9 @@ float Fixed::toFloat( void ) const {
 
 int Fixed::toInt( void ) const {
 	return this->_value >> this->_fractionalBits;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &src) {
+	out << src.toFloat();
+	return out;
 }

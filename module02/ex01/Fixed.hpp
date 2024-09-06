@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:26:45 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/05 11:11:46 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:38:54 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ class Fixed {
 		int toInt( void ) const;
 
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &src);
 
 #endif

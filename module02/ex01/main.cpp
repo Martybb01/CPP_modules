@@ -6,16 +6,11 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 20:26:38 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/05 11:19:24 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:39:01 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-std::ostream &operator<<(std::ostream &out, const Fixed &src) {
-	out << src.toFloat();
-	return out;
-}
 
 int main( void )
 {
