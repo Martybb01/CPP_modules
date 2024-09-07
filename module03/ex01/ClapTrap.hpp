@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 17:04:10 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 10:29:34 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/07 11:21:59 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap {
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &src);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap &operator=(const ClapTrap &src);
 
 		std::string getName(void) const;
