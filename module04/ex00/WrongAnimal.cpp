@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:33:50 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 18:35:21 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:34:00 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@ WrongAnimal::WrongAnimal(): _type("WrongAnimal") {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string const &type): _type(type) {
-	std::cout << "WrongAnimal type constructor called" << std::endl;
-}
-
-WrongAnimal::WrongAnimal(const WrongAnimal &copy) {
+WrongAnimal::WrongAnimal(const WrongAnimal &copy): _type(copy._type) {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
 	*this = copy;
 }
@@ -36,7 +32,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &copy) {
 	return *this;
 }
 
-std::string const &WrongAnimal::getType() const {
+std::string WrongAnimal::getType() const {
 	return this->_type;
 }
 

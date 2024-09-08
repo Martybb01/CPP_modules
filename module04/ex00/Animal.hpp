@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:05:04 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 19:49:12 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:27:54 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ class Animal {
 
 	public:
 		Animal();
-		Animal(std::string const &type);
 		Animal(const Animal &copy);
 		virtual ~Animal();
 		Animal &operator=(const Animal &copy);
 
-		std::string const &getType() const;
+		std::string getType() const;
 		virtual void makeSound() const;
 };
 
