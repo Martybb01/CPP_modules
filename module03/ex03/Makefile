@@ -1,4 +1,4 @@
-NAME = clapTrap_v4
+NAME = clapTrap_v3
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
@@ -9,19 +9,21 @@ SRCS = main.cpp \
 		FragTrap.cpp \
 		DiamondTrap.cpp
 
+OBJS = $(SRCS:.cpp=.o)
+
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 all: $(NAME)
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
-
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
-
 clean:
-	@$(RM)  $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
