@@ -6,11 +6,11 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:48:09 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/01 19:48:10 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:32:33 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.hpp"
+#include "PhoneBook.hpp"
 
 void ft_printStart()
 {
@@ -20,7 +20,7 @@ void ft_printStart()
 
 int main()
 {
-	phoneBook phoneBook;
+	PhoneBook phoneBook;
 	Contact newContact;
 	std::string input;
 

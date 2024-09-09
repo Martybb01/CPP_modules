@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:48:19 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/01 19:48:20 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:34:15 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.hpp"
+#include "PhoneBook.hpp"
 
-phoneBook::phoneBook() : _contactCount(0), _contactIndex(0) {};
+PhoneBook::PhoneBook() : _contactCount(0), _contactIndex(0) {};
 
-phoneBook::~phoneBook() {};
+PhoneBook::~PhoneBook() {};
 
-void phoneBook::addContact(const Contact &contact)
+void PhoneBook::addContact(const Contact &contact)
 {
 	if (!contact.isEmpty())
 	{
@@ -27,7 +27,7 @@ void phoneBook::addContact(const Contact &contact)
 	}
 }
 
-void phoneBook::displayContact(int index) const
+void PhoneBook::displayContact(int index) const
 {
 	if (index >= 0 && index < _contactCount)
 	{
@@ -42,8 +42,9 @@ void phoneBook::displayContact(int index) const
 }
 
 
-void phoneBook::displayContacts() const
+void PhoneBook::displayContacts() const
 {
+	std::string PhoneBook;
 	std::cout << std::setw(10) << "Index" << "|";
 	std::cout << std::setw(10) << "First name" << "|";
 	std::cout << std::setw(10) << "Last name" << "|";
@@ -58,7 +59,7 @@ void phoneBook::displayContacts() const
 	}
 }
 
-std::string phoneBook::truncate(std::string str) const
+std::string PhoneBook::truncate(std::string str) const
 {
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";

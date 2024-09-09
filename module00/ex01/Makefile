@@ -4,7 +4,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 
 SRCS = main.cpp \
-		Phonebook.cpp \
+		PhoneBook.cpp \
 		Contact.cpp
 
 OBJS = $(SRCS:.cpp=.o)

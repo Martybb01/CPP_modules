@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:48:25 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/01 19:48:25 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:33:09 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 #include <iomanip>
 #include <string>
 #include <cstdlib>
-#include "contact.hpp"
+#include "Contact.hpp"
 
-class phoneBook {
+class PhoneBook {
 
 private:
 	Contact _contacts[8];
@@ -28,8 +28,8 @@ private:
 	int _contactIndex;
 
 public:
-	phoneBook();
-	~phoneBook();
+	PhoneBook();
+	~PhoneBook();
 
 	void addContact(const Contact &contact);
 	void displayContact(int index) const;
