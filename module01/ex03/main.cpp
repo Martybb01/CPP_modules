@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:33:08 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/02 19:01:31 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/10 09:25:19 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main( void )
 
 		HumanA bob("Bob", club);
 		bob.attack();
-		club.setType("some other type of club");
+		club.setType("superduper sword");
 		bob.attack();
 	}
 	{
@@ -31,7 +31,7 @@ int main( void )
 		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
-		club.setType("some other type of club");
+		club.setType("superduper sword");
 		jim.attack();
 	}
 	return 0;

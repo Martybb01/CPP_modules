@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:57:42 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/01 20:19:06 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/10 09:05:37 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ Zombie::~Zombie( void )
 
 void Zombie::announce() const
 {
-	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	return;
 }

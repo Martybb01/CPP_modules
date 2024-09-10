@@ -6,14 +6,11 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:49:49 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/01 20:20:17 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/10 09:06:46 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-Zombie *newZombie( std::string name );
-void randomChump( std::string name );
 
 int main( void )
 {

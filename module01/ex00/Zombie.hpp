@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 19:47:34 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/01 20:18:47 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/10 09:13:46 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ class Zombie {
 
 		void announce() const;
 };
+
+Zombie *newZombie( std::string name );
+void randomChump( std::string name );
 
 #endif

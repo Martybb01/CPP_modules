@@ -6,26 +6,37 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 10:41:57 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/03 11:40:34 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/10 09:40:00 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* Create a program that takes three parameters in the following order: a filename and
-two strings, s1 and s2.
-It will open the file <filename> and copies its content into a new file
-<filename>.replace, replacing every occurrence of s1 with s2. */
 
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <unistd.h>
 
 void replaceFileContent(const std::string &filename, const std::string &s1, const std::string &s2)
 {
+	if (access(filename.c_str(), R_OK | W_OK) == -1)
+	{
+		std::cout << "Error: could not access file " << filename << std::endl;
+		return;
+	}
+
 	std::ifstream inputFile(filename.c_str());
 
 	if (!inputFile.is_open())
 	{
 		std::cout << "Error: could not open file " << filename << std::endl;
+		return;
+	}
+
+	/* peek restituisce il pro char nel flusso senza estrarlo.
+	Se il file è vuoto, restituisce std::ifstream::traits_type::eof() */
+	if (inputFile.peek() == std::ifstream::traits_type::eof())
+	{
+		std::cout << "Error: file " << filename << " is empty." << std::endl;
+		inputFile.close();
 		return;
 	}
 
