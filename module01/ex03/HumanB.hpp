@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:56:36 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/02 19:04:13 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:39:03 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class HumanB
 	public:
 		HumanB(std::string name);
 		~HumanB();
+		
 		void attack() const;
 		void setWeapon(Weapon &weapon);
 };

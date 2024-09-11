@@ -6,13 +6,15 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 18:57:44 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/02 19:12:36 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:37:50 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): _name(name) {};
+HumanB::HumanB(std::string name): _name(name) {
+	this->_weapon = NULL;
+};
 
 HumanB::~HumanB() {};
 
