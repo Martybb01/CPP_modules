@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 12:42:14 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/06 12:08:23 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/11 19:03:21 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed() : _value(0) {
 
 Fixed::Fixed(const Fixed &src) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+	this->_value = src.getRawBits();
 }
 
 Fixed::~Fixed() {
@@ -126,7 +126,7 @@ Fixed &Fixed::min(Fixed &a, Fixed &b) {
 }
 
 const Fixed &Fixed::min(Fixed const &a, Fixed const &b) {
-	return (a < b ? a : b);;
+	return (a < b ? a : b);
 }
 
 Fixed &Fixed::max(Fixed &a, Fixed &b) {
