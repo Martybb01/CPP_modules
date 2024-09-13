@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 17:04:10 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 12:01:55 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:30:35 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,10 @@ class ClapTrap {
 		virtual ~ClapTrap();
 		ClapTrap &operator=(const ClapTrap &src);
 
-		std::string getName(void) const;
+		virtual std::string getName(void) const;
 		unsigned int getHitPoints(void) const;
 		unsigned int getEnergyPoints(void) const;
 		unsigned int getAttackDamage(void) const;
-
-		virtual unsigned int getMaxHitPoints(void) const;
-		virtual unsigned int getMaxEnergyPoints(void) const;
 
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);

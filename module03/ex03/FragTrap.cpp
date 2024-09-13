@@ -6,18 +6,17 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 10:56:20 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 12:02:56 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:29:59 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap() {
+FragTrap::FragTrap() : ClapTrap("FragTrap") {
 	std::cout << "FragTrap default constructor" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	return;
 }
 
 FragTrap::FragTrap(std::string &name): ClapTrap(name) {
@@ -25,11 +24,13 @@ FragTrap::FragTrap(std::string &name): ClapTrap(name) {
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	return;
 }
 
 FragTrap::FragTrap(const FragTrap &src) {
-	*this = src;
+	this->_name = src.getName();
+	this->_hitPoints = src.getHitPoints();
+	this->_energyPoints = src.getEnergyPoints();
+	this->_attackDamage = src.getAttackDamage();
 }
 
 FragTrap::~FragTrap() {
@@ -52,12 +53,4 @@ void FragTrap::highFivesGuys(void) {
 	else
 		std::cout << "FragTrap " << this->_name << " is asking for a high five!" << std::endl;
 	return;
-}
-
-unsigned int FragTrap::getMaxHitPoints(void) const {
-	return 100;
-}
-
-unsigned int FragTrap::getMaxEnergyPoints(void) const {
-	return 100;
 }

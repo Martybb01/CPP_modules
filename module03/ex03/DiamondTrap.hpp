@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 11:44:09 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 12:20:33 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:16:54 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		DiamondTrap &operator=(const DiamondTrap &src);
 
 		void whoAmI(void);
+		std::string getName(void) const;
 	
-		unsigned int getMaxHitPoints(void) const;
-		unsigned int getMaxEnergyPoints(void) const;
 		using ScavTrap::attack;
 	
 };

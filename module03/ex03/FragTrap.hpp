@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 10:35:50 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 12:16:02 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:01:41 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class FragTrap: virtual public ClapTrap {
 		FragTrap &operator=(const FragTrap &src);
 
 		void highFivesGuys(void);
-		unsigned int getMaxHitPoints(void) const;
-		unsigned int getMaxEnergyPoints(void) const;
 };
 
 #endif
