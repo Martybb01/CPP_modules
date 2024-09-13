@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 12:42:14 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/11 19:03:21 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/12 16:06:20 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,18 @@ bool Fixed::operator!=(const Fixed &src) const {
 	return (this->_value != src.getRawBits());
 }
 
+/*  ++obj
+Incrementa il valore dell'obj prima di restituirlo.
+Restituisce una referenza all'obj stesso.*/
 Fixed &Fixed::operator++() {
 	this->_value++;
 	return *this;
 }
 
+/* obj++ 
+Incrementa il valore dell'obj dopo averne restituito una copia.
+Restitusice una copia dell'obj prima dell'incremento.
+*/
 Fixed Fixed::operator++(int) {
 	Fixed tmp(*this);
 	++(*this);
