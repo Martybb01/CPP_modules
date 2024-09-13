@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 17:03:54 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 10:25:52 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:26:14 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoint
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
-	*this = src;
+	_name = src.getName();
+	_hitPoints = src.getHitPoints();
+	_energyPoints = src.getEnergyPoints();
+	_attackDamage = src.getAttackDamage();
 }
 
 ClapTrap::~ClapTrap() {
@@ -53,10 +56,6 @@ unsigned int ClapTrap::getEnergyPoints(void) const {
 
 unsigned int ClapTrap::getAttackDamage(void) const {
 	return this->_attackDamage;
-}
-
-unsigned int ClapTrap::getMaxHitPoints(void) const {
-	return 10;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -95,10 +94,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << this->_name << " has no energy and cannot be repaired!" << std::endl;
 		return;
 	}
-	if (this->_hitPoints + amount >= getMaxHitPoints())
-		this->_hitPoints = getMaxHitPoints();
-	else
-		this->_hitPoints += amount;
+
+	this->_hitPoints += amount;
 	this->_energyPoints--;
 	std::cout << this->_name << " is repaired and has now " << _hitPoints << " hit points!" << std::endl;
 }

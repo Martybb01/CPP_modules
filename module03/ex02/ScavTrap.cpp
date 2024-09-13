@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 18:38:48 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 11:02:06 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:44:14 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ ScavTrap::ScavTrap(std::string &name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) {
-	*this = src;
+	this->_name = src.getName();
+	this->_hitPoints = src.getHitPoints();
+	this->_energyPoints = src.getEnergyPoints();
+	this->_attackDamage = src.getAttackDamage();
 }
 
 ScavTrap::~ScavTrap() {
@@ -64,11 +67,7 @@ void ScavTrap::attack(const std::string &target) {
 		std::cout << "ScavTrap " << this->_name << " has no energy and cannot attack!" << std::endl;
 		return;
 	}
-	this->_energyPoints -= 1;
+	this->_energyPoints--;
 	std::cout << "ScavTrap " << this->_name << " is so powerful and attack " << target << ", for a blasting " << this->_attackDamage << " damage pointsss!" << std::endl;
 	
-}
-
-unsigned int ScavTrap::getMaxHitPoints(void) const {
-	return 100;
 }

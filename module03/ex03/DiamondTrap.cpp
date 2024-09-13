@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 11:44:34 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/13 13:25:15 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:46:01 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ DiamondTrap::DiamondTrap(std::string &name) : ClapTrap(name + "_clap_name"), Sca
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
-	std::cout << "hitPoints: " << FragTrap::_hitPoints << "Attack: " << this->_attackDamage << "energy: " << this->_energyPoints << std::endl;
 	std::cout << "DiamondTrap " << name << " is created" << std::endl;
 }
 

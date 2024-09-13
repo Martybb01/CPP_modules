@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 17:03:54 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/06 18:22:28 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:43:23 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoint
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
-	*this = src;
+	_name = src.getName();
+	_hitPoints = src.getHitPoints();
+	_energyPoints = src.getEnergyPoints();
+	_attackDamage = src.getAttackDamage();
 }
 
 ClapTrap::~ClapTrap() {
@@ -88,10 +91,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << _name << " has no energy and cannot be repaired!" << std::endl;
 		return;
 	}
-	if (this->_hitPoints + amount > 10)
-		this->_hitPoints = 10;
-	else
-		this->_hitPoints += amount;
+
+	this->_hitPoints += amount;
 	this->_energyPoints--;
 	std::cout << "ClapTrap " << _name << " is repaired and has now " << _hitPoints << " hit points!" << std::endl;
 }

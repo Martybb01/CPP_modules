@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 10:56:20 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 11:08:14 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:42:44 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ FragTrap::FragTrap(std::string &name): ClapTrap(name) {
 }
 
 FragTrap::FragTrap(const FragTrap &src) {
-	*this = src;
+	this->_name = src.getName();
+	this->_hitPoints = src.getHitPoints();
+	this->_energyPoints = src.getEnergyPoints();
+	this->_attackDamage = src.getAttackDamage();
 }
 
 FragTrap::~FragTrap() {
@@ -52,8 +55,4 @@ void FragTrap::highFivesGuys(void) {
 	else
 		std::cout << "FragTrap " << this->_name << " is asking for a high five!" << std::endl;
 	return;
-}
-
-unsigned int FragTrap::getMaxHitPoints(void) const {
-	return 100;
 }
