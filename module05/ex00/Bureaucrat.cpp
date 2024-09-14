@@ -6,30 +6,40 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:40:46 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/14 17:52:28 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:16:36 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
+
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name) {
-	if (grade < 1)
-		throw GradeTooHighException();
-	if (grade > 150)
-		throw GradeTooLowException();
+	try {
+		if (grade < 1)
+			throw GradeTooHighException();
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	try {
+		if (grade > 150)
+			throw GradeTooLowException();
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name) {
-	this->_grade = src._grade;
-}
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name), _grade(src._grade) {}
 
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src) {
-	if (this != &src) {
+	if (this != &src)
 		this->_grade = src._grade;
-	}
 	return *this;
 }
 
@@ -42,15 +52,23 @@ int Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::incrementGrade() {
-	if (_grade <= 1)
-		throw GradeTooHighException();
-	_grade--;
+	try {
+		if (_grade <= 1)
+			throw GradeTooHighException();
+		_grade--;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
 void Bureaucrat::decrementGrade() {
-	if (_grade >= 150)
-		throw GradeTooLowException();
-	_grade++;
+	try {
+		if (_grade >= 150)
+			throw GradeTooLowException();
+		_grade++;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {

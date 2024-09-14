@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:33:55 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/14 17:46:21 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:12:43 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 class Bureaucrat {
 public:
+	Bureaucrat();
 	Bureaucrat(std::string const &name, int grade);
 	Bureaucrat(Bureaucrat const &src);
 	~Bureaucrat();

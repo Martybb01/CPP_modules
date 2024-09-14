@@ -6,36 +6,32 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:46:46 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/14 17:52:51 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:20:39 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
-	try {
-		Bureaucrat bob("Bob", 50);
-		std::cout << bob << std::endl;
 
-		bob.incrementGrade();
-		std::cout << bob << std::endl;
+	Bureaucrat minion("Bob", 50);
+	Bureaucrat minion2("Carla", 2);
+	std::cout << minion << std::endl;
+	std::cout << minion2 << std::endl;
+	
+	minion.decrementGrade();
+	std::cout << minion << std::endl;
 
-		Bureaucrat jim("Jim", 150);
-		std::cout << jim << std::endl;
+	minion2.incrementGrade();
+	std::cout << minion2 << std::endl;
+	minion2.incrementGrade();
 
-		jim.decrementGrade();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	Bureaucrat minion3("Jim", 150);
+	std::cout << minion3 << std::endl;
+	minion3.decrementGrade();
 
-	try {
-		Bureaucrat luca("luca", 0);
-		std::cout << luca << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	Bureaucrat minion4("luca", 0);
+	std::cout << minion4 << std::endl;
 
 	return 0;
 }
