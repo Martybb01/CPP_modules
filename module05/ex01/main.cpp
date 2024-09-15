@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:46:46 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 11:34:57 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/15 11:47:37 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main() {
 
 		// Form with invalid grades
 		Form form3("Invalid", 0, 151);
+		Form form5("Invalid", 151, 10);
 
 		// Try to sign an already signed form
 		Form form4("Simple Form",100, 100);
