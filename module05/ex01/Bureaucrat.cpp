@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:40:46 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 11:21:30 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/15 12:26:23 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,13 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name) {
 	try {
 		if (grade < 1)
 			throw GradeTooHighException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	try {
 		if (grade > 150)
 			throw GradeTooLowException();
-	}
-	catch (std::exception &e) {
+		_grade = grade;
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
+		_grade = 150;
 	}
-	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name), _grade(src._grade) {}
