@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:07:28 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/08 12:33:50 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:37:25 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Animal::Animal(): _type("Animal") {
 
 Animal::Animal(const Animal &copy): _type(copy._type) {
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = copy;
+	this->_type = copy._type;
 }
 
 Animal::~Animal() {

@@ -1,7 +1,7 @@
 NAME = clapTrap_v3
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -Wshadow -g
 
 SRCS = main.cpp \
 		ClapTrap.cpp \

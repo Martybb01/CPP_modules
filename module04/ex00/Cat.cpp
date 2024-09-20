@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:16:55 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/07 18:26:10 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:37:37 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat(): Animal() {
 
 Cat::Cat(const Cat &copy): Animal(copy) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = copy;
+	this->_type = copy._type;
 }
 
 Cat::~Cat() {

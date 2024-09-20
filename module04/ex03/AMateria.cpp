@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Amateria.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:55:29 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/08 17:02:50 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:49:29 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ AMateria::AMateria(std::string const & type) : _type(type) {
 
 AMateria::AMateria(AMateria const &src) {
 	std::cout << "AMateria copy constructor" << std::endl;
-	*this = src;
+	this->_type = src._type;
 }
 
 AMateria::~AMateria() {
