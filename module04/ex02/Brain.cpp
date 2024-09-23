@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 12:06:23 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/08 12:07:06 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:48:44 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Brain::Brain() {
 
 Brain::Brain(const Brain &copy) {
 	std::cout << "Brain copy constructor called" << std::endl;
-	*this = copy;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = copy._ideas[i];
 }
 
 Brain::~Brain() {
