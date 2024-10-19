@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:16:36 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 20:32:49 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 15:09:57 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,12 @@
 AForm::AForm() : _name("default"), _signed(false), _signGrade(150), _execGrade(150) {}
 
 AForm::AForm(std::string const &name, int signGrade, int execGrade) : _name(name), _signed(false), _signGrade(signGrade), _execGrade(execGrade) {
-	try {
-		if (signGrade < 1 || execGrade < 1)
-			throw GradeTooHighException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
 
-	try {
-		if (signGrade > 150 || execGrade > 150)
-			throw GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (signGrade < 1 || execGrade < 1)
+		throw GradeTooHighException();
+
+	if (signGrade > 150 || execGrade > 150)
+		throw GradeTooLowException();
 }
 
 AForm::AForm(AForm const &src) : _name(src._name), _signed(src._signed), _signGrade(src.getSignGrade()), _execGrade(src.getExecGrade()) {}
@@ -76,13 +67,6 @@ void AForm::beSigned(Bureaucrat const &bureaucrat) {
 	_signed = true;
 }
 
-void AForm::execute(Bureaucrat const &executor) const {
-	if (executor.getGrade() > _execGrade)
-		throw GradeTooLowException();
-	if (this->getSigned())
-		throw FormAlreadySignedException();
-}
-
 const char *AForm::GradeTooHighException::what() const throw() {
 	return "Grade is too high";
 }
@@ -93,6 +77,10 @@ const char *AForm::GradeTooLowException::what() const throw() {
 
 const char *AForm::FormAlreadySignedException::what() const throw() {
 	return "Form is already signed";
+}
+
+const char *AForm::FormNotSignedException::what() const throw() {
+	return "Form is not signed";
 }
 
 std::ostream &operator<<(std::ostream &out, AForm const &src) {

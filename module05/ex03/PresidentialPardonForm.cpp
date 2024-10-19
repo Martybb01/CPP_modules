@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 13:03:27 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 20:37:42 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 15:10:13 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : AFor
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
-	AForm::execute(executor);
+	if (!getSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > getExecGrade())
+		throw GradeTooLowException();
+
 	std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 20:35:28 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/16 20:58:42 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 15:10:27 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm("Rob
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-	AForm::execute(executor);
+	if (!getSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > getExecGrade())
+		throw GradeTooLowException();
 	std::cout << "***drilling noises***" << std::endl;
-	if (rand() % 2)
+	if (rand() % 2 == 0)
 		std::cout << getTarget() << " has been robotomized." << std::endl;
 	else
 		std::cout << getTarget() << " robotomization failed." << std::endl;
