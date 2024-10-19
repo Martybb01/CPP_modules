@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:40:46 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 12:26:23 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 14:49:36 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void Bureaucrat::decrementGrade() {
 
 void Bureaucrat::signForm(Form &form) {
 	form.beSigned(*this);
+	std::cout << _name << " signs " << form.getName() << std::endl;
+
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {

@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:46:46 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/19 14:47:36 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 14:49:50 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main() {
 		Form form("Tax Form", 50, 30);
 		std::cout << bureaucrat << std::endl;
 		std::cout << form << std::endl;
-		std::cout << "Signing form" << std::endl;
 		bureaucrat.signForm(form);
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
