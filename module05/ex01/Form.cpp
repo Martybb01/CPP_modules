@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:51:40 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 11:44:54 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 14:41:49 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 Form::Form() : _name("default"), _signed(false), _signGrade(150), _execGrade(150) {}
 
 Form::Form(std::string const &name, int signGrade, int execGrade) : _name(name), _signed(false), _signGrade(signGrade), _execGrade(execGrade) {
-	try {
-		if (signGrade < 1 || execGrade < 1)
-			throw GradeTooHighException();
-		if (signGrade > 150 || execGrade > 150)
-			throw GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (signGrade < 1 || execGrade < 1)
+		throw GradeTooHighException();
+	if (signGrade > 150 || execGrade > 150)
+		throw GradeTooLowException();
 }
 
 Form::Form(Form const &src) : _name(src._name), _signed(src._signed), _signGrade(src.getSignGrade()), _execGrade(src.getExecGrade()) {}
