@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:16:36 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 20:32:49 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 14:50:40 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,11 @@
 AForm::AForm() : _name("default"), _signed(false), _signGrade(150), _execGrade(150) {}
 
 AForm::AForm(std::string const &name, int signGrade, int execGrade) : _name(name), _signed(false), _signGrade(signGrade), _execGrade(execGrade) {
-	try {
-		if (signGrade < 1 || execGrade < 1)
-			throw GradeTooHighException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (signGrade < 1 || execGrade < 1)
+		throw GradeTooHighException();
 
-	try {
-		if (signGrade > 150 || execGrade > 150)
-			throw GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (signGrade > 150 || execGrade > 150)
+		throw GradeTooLowException();
 }
 
 AForm::AForm(AForm const &src) : _name(src._name), _signed(src._signed), _signGrade(src.getSignGrade()), _execGrade(src.getExecGrade()) {}
