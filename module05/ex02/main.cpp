@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 20:45:23 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/19 14:55:22 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 15:06:39 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int main()
     try {
         std::cout << "\n--- Testing ShrubberyCreationForm ---\n";
         std::cout << shrubbery << std::endl;
-        lowRank.signForm(shrubbery);
-        highRank.executeForm(shrubbery);
+
         highRank.signForm(shrubbery);
-        lowRank.executeForm(shrubbery);
+        highRank.executeForm(shrubbery);
+
     } catch (std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }

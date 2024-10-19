@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 20:41:26 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 20:45:19 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 15:03:54 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : AForm(
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-	AForm::execute(executor);
+	if (!getSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > getExecGrade())
+		throw GradeTooLowException();
 	std::string filename = getTarget() + "_shrubbery";
 	std::ofstream fileOut(filename.c_str());
 	if (fileOut.is_open()) {

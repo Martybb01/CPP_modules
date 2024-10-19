@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:09:18 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/15 20:49:03 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/10/19 15:03:09 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ public:
 		const char *what() const throw();
 	};
 	class FormAlreadySignedException : public std::exception {
+	public:
+		const char *what() const throw();
+	};
+	class FormNotSignedException : public std::exception {
 	public:
 		const char *what() const throw();
 	};
