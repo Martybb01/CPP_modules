@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:47:35 by marboccu          #+#    #+#             */
-/*   Updated: 2024/09/17 11:47:41 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/11/30 16:04:23 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int ac, char **av) {
 	if (ac != 2) {
-		std::cout << "Usage: ./convert literal" << std::endl;
+		std::cout << "Usage: ./scalarConversion value" << std::endl;
 		return 1;
 	}
 	ScalarConverter::convert(av[1]);
