@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:34:40 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/03 23:27:24 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:08:17 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <limits>
 #include <cmath>
 #include <string.h>
-#include <vector>
 #include <sstream>
 
 ScalarConverter::ScalarConverter() {}
@@ -118,12 +117,12 @@ void ScalarConverter::intConverter(const std::string &input) {
 }
 
 void ScalarConverter::floatConverter(const std::string &input) {
-    float value = strtof(input.c_str(), nullptr);
+    float value = strtof(input.c_str(), NULL);
     printFloat(value);
 }
 
 void ScalarConverter::doubleConverter(const std::string &input) {
-    double value = strtod(input.c_str(), nullptr);
+    double value = strtod(input.c_str(), NULL);
     printDouble(value);
 }
 
