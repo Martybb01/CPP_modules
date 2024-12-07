@@ -6,27 +6,11 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:28:11 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/05 13:44:37 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/07 12:28:56 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-
-// func templates to test iter
-template <typename T>
-void print(T &x) {
-	std::cout << x << " ";
-}
-
-template <typename T>
-void addOne(T &x) {
-	x++;
-}
-
-template <typename T>
-void minusOne(T &x) {
-	x--;
-}
 
 int main() {
 	int intArray[] = {1, 2, 3, 4, 5};
