@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 17:03:19 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/12 17:28:04 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:21:36 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 #include <list>
 
 template <typename T>
-int easyFind(const T &container, int value) {
+int easyfind(const T &container, int value) {
 	typename T::const_iterator it = std::find(container.begin(), container.end(), value);
 	if (it == container.end())
-		throw std::runtime_error("Value not found");
+		throw std::runtime_error("Value " + std::to_string(value) + " not found");
 	return *it;
 }
 
