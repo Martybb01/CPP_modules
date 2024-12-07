@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 17:30:28 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/13 16:46:54 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/07 19:19:52 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(){
 
 	try {
 		Span sp = Span(5);
-		sp.addNumber(5);
+		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
