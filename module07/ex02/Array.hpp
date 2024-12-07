@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:28:33 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/07 17:49:58 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/07 12:53:29 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Array {
 		Array &operator=(Array const &src);
 
 		T &operator[](unsigned int index);
+		T const &operator[](unsigned int index) const;
 
 		unsigned int size(void) const;
 };

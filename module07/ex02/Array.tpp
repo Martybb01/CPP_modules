@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:31:34 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/07 17:49:31 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/07 12:54:00 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ Array<T>::Array(Array const &src) {
 
 template <typename T>
 Array<T>::~Array(void) {
-	delete[] _array;
+	if (_array != NULL)
+		delete[] _array;
+	_size = 0;
 	return;
 }
 
@@ -57,6 +59,14 @@ Array<T> &Array<T>::operator=(Array const &src) {
 
 template <typename T>
 T &Array<T>::operator[](unsigned int index) {
+	if (index >= _size) {
+		throw std::out_of_range("Index out of range");
+	}
+	return _array[index];
+}
+
+template <typename T>
+T const &Array<T>::operator[](unsigned int index) const {
 	if (index >= _size) {
 		throw std::out_of_range("Index out of range");
 	}
