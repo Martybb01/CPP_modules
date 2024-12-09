@@ -6,9 +6,12 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 19:58:52 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/07 20:32:13 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/09 10:33:34 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
 
 #include <iostream>
 #include <fstream>
@@ -38,3 +41,5 @@ class BitcoinExchange {
 
 		const std::map<time_t, float> &getDatabase() const;
 };
+
+#endif
