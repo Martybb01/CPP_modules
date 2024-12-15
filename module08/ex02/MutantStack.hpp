@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 16:59:19 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/13 17:12:44 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:12:29 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MutantStack: public std::stack<T> {
 		MutantStack();
 		MutantStack(MutantStack const &src);
 		~MutantStack();
-		MutantStack &operator=(MutantStack const &rhs);
+		MutantStack &operator=(MutantStack const &src);
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
 		typedef typename std::stack<T>::container_type::const_iterator const_iterator;

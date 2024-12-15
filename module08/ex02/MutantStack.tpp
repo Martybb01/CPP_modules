@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 17:04:39 by marboccu          #+#    #+#             */
-/*   Updated: 2024/10/13 17:07:03 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:12:18 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ template <typename T>
 MutantStack<T>::~MutantStack() {}
 
 template <typename T>
-MutantStack<T> &MutantStack<T>::operator=(MutantStack const &rhs) {
-	if (this != &rhs)
-		std::stack<T>::operator=(rhs);
+MutantStack<T> &MutantStack<T>::operator=(MutantStack const &src) {
+	if (this != &src)
+		std::stack<T>::operator=(src);
 	return *this;
 }
 
