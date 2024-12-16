@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 17:30:24 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/07 19:18:21 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:19:34 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,9 @@ int Span::shortestSpan() {
 	std::vector<int> tmp = this->_numbers;
 	std::sort(tmp.begin(), tmp.end());
 
-	std::vector<int> diffs(tmp.size() - 1);
+	std::vector<int> diffs(tmp.size());
     std::adjacent_difference(tmp.begin(), tmp.end(), diffs.begin());
-    diffs.erase(diffs.begin());
-	return *std::min_element(diffs.begin(), diffs.end());
+	return *std::min_element(diffs.begin() + 1, diffs.end());
 }
 
 int Span::longestSpan() {
