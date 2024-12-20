@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:50 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/20 09:37:37 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/20 10:00:48 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ class PmergeMe {
 		}
 
 		template <typename T>
-		static void FordJohnsonSort(T &data) {
+		static void fordJohnsonSort(T &data) {
 			if (data.size() < 2)
 				return;
 

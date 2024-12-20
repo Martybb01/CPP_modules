@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:43 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/20 09:56:57 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/20 10:01:11 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,24 @@ PmergeMe::PmergeMe(int ac, char **av) {
 void PmergeMe::run(void) {
 	printBefore();
 	long start = getTimeMs();
-	FordJohnsonSort(vec);
+	fordJohnsonSort(vec);
 	long end = getTimeMs();
 
 	long startdeq = getTimeMs();
-	FordJohnsonSort(deq);
+	fordJohnsonSort(deq);
 	long enddeq = getTimeMs();
 	printAfter();
 
-	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << (end - start) << " us" << std::endl;
-    std::cout << "Time to process a range of " << deq.size() << " elements with std::deque: " << (enddeq - startdeq) << " us" << std::endl;
+	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << (end - start) << " ms" << std::endl;
+    std::cout << "Time to process a range of " << deq.size() << " elements with std::deque: " << (enddeq - startdeq) << " ms" << std::endl;
 }
 
-void PmergeMe::parseInput(int argc, char **argv) {
-    if (argc < 2)
+void PmergeMe::parseInput(int ac, char **av) {
+    if (ac < 2)
         throw std::runtime_error("No arguments provided.");
 
-    for (int i = 1; i < argc; ++i) {
-        std::string arg = argv[i];
+    for (int i = 1; i < ac; ++i) {
+        std::string arg = av[i];
         if (!isPositive(arg))
             throw std::runtime_error("Invalid argument.");
         int val = std::atoi(arg.c_str());
