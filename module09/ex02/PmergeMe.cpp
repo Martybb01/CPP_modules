@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:43 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/20 10:01:11 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/20 11:57:42 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void PmergeMe::run(void) {
 	long enddeq = getTimeMs();
 	printAfter();
 
-	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << (end - start) << " ms" << std::endl;
-    std::cout << "Time to process a range of " << deq.size() << " elements with std::deque: " << (enddeq - startdeq) << " ms" << std::endl;
+	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << (end - start) << " us" << std::endl;
+    std::cout << "Time to process a range of " << deq.size() << " elements with std::deque: " << (enddeq - startdeq) << " us" << std::endl;
 }
 
 void PmergeMe::parseInput(int ac, char **av) {
@@ -66,11 +66,11 @@ bool PmergeMe::isPositive(const std::string &str) {
     }
     if (str.empty()) return false;
     long val = std::atol(str.c_str());
-    if (val <= 0 || val > INT_MAX) return false;
+    if (val <= 0 || val > std::numeric_limits<int>::max()) return false;
     return true;
 }
 
-long PmergeMe::getTimeMs() {
+long PmergeMe::getTimeMs() {	
     struct timeval tv;
     gettimeofday(&tv, NULL);
     return (tv.tv_sec * 1000000) + tv.tv_usec;
