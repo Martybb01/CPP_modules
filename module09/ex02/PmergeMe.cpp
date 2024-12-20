@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:43 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/20 09:40:15 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/20 09:56:57 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,13 @@ void PmergeMe::parseInput(int argc, char **argv) {
 void PmergeMe::printBefore() {
     std::cout << "Before: ";
     printSequence(this->inputVector);
+	std::cout << std::endl;
 }
 
 void PmergeMe::printAfter() {
     std::cout << "After: ";
-    printSequence(this->inputVector);
+    printSequence(this->vec);
+	std::cout << std::endl;
 }
 
 
