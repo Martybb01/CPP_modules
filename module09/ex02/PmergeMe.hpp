@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:50 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/20 10:00:48 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/21 10:02:00 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ class PmergeMe {
 				for (size_t i = 0; i < size; i++)
 				{
 					std::cout << data[i];
-					if (i + 1 < size)
-						std::cout << " ";
+					std::cout << (i + 1 < size ? " " : "\n");
 				}
 			} else {
 				for (size_t i = 0; i < 10; i++)
@@ -61,9 +60,9 @@ class PmergeMe {
 		}
 
 		template <typename T>
-		static void binaryInsert(T &vec, int value) {
-			typename T::iterator low = std::lower_bound(vec.begin(), vec.end(), value);
-			vec.insert(low, value);
+		static void binaryInsert(T &seq, int value) {
+			typename T::iterator low = std::lower_bound(seq.begin(), seq.end(), value);
+			seq.insert(low, value);
 		}
 
 		template <typename T>

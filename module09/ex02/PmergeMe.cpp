@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:43 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/20 11:57:42 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/21 09:58:50 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ PmergeMe::PmergeMe(int ac, char **av) {
 
 void PmergeMe::run(void) {
 	printBefore();
-	long start = getTimeMs();
+	long startvec = getTimeMs();
 	fordJohnsonSort(vec);
-	long end = getTimeMs();
+	long endvec = getTimeMs();
 
 	long startdeq = getTimeMs();
 	fordJohnsonSort(deq);
 	long enddeq = getTimeMs();
 	printAfter();
 
-	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << (end - start) << " us" << std::endl;
+	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector: " << (endvec - startvec) << " us" << std::endl;
     std::cout << "Time to process a range of " << deq.size() << " elements with std::deque: " << (enddeq - startdeq) << " us" << std::endl;
 }
 
@@ -49,13 +49,11 @@ void PmergeMe::parseInput(int ac, char **av) {
 void PmergeMe::printBefore() {
     std::cout << "Before: ";
     printSequence(this->inputVector);
-	std::cout << std::endl;
 }
 
 void PmergeMe::printAfter() {
     std::cout << "After: ";
     printSequence(this->vec);
-	std::cout << std::endl;
 }
 
 
