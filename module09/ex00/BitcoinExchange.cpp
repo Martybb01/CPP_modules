@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 20:27:40 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/08 10:40:33 by marboccu         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:32:41 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &src) {
 }
 
 void BitcoinExchange::loadDatabase(const std::string &filename) {
-	std::ifstream file(filename);
+	std::ifstream file(filename.c_str());
 	if (!file.is_open()) {
 		throw std::runtime_error("Could not open file");
 	}
