@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:50 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/21 10:02:00 by marboccu         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:47:43 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cctype>
-#include <climits>
+#include <limits>
 #include <sys/time.h>
 #include <stdexcept>
 

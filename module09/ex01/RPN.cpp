@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:34:49 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/09 11:25:20 by marboccu         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:53:17 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void RPN::processInput(const std::string &str) {
 		if (token.length() == 1 && std::string("+-*/").find(token[0]) != std::string::npos) {
 			doOperation(token[0]);
 		} else if (isdigit(token[0]) && token.length() == 1) {
-			_stack.push(std::stoi(token));
+			_stack.push(std::atoi(token.c_str()));
 		} else {
 			throw std::runtime_error("Error: Invalid token");
 		}

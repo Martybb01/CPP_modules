@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:20:40 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/09 11:22:55 by marboccu         ###   ########.fr       */
+/*   Updated: 2025/01/07 21:30:57 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stack>
 #include <sstream>
 #include <stdexcept>
+#include <cstdlib>
 
 
 class RPN {

@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:45:43 by marboccu          #+#    #+#             */
-/*   Updated: 2024/12/21 09:58:50 by marboccu         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:47:27 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ bool PmergeMe::isPositive(const std::string &str) {
     }
     if (str.empty()) return false;
     long val = std::atol(str.c_str());
-    if (val <= 0 || val > std::numeric_limits<int>::max()) return false;
+    if (val <= 0 || val > (std::numeric_limits<int>::max())) return false;
     return true;
 }
 
