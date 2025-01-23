@@ -60,7 +60,7 @@ void BitcoinExchange::processInput(const std::string &filename) const {
     while (std::getline(file, line)) {
         std::istringstream iss(line);
         std::string dateStr, valueStr;
-        float value;
+        double value;
 
         if (std::getline(iss, dateStr, '|') && std::getline(iss, valueStr)) {
             dateStr = dateStr.erase(dateStr.find_last_not_of(" \t") + 1);
@@ -77,8 +77,8 @@ void BitcoinExchange::processInput(const std::string &filename) const {
                 if (it == _database.end() || (it != _database.begin() && it->first > date))
                     --it;
 
-                float rate = it->second;
-                std::cout << dateToString(date) << " => " << value << " = " << (value * rate) << std::endl;
+                double rate = it->second;
+                 std::cout << dateToString(date) << " => " << value << " = " << (value * rate) << std::endl;
 
             } catch (const std::exception &e) {
                 std::cout << "Error: " << e.what() << std::endl;

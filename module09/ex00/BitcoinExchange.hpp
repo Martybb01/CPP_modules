@@ -20,6 +20,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <stdexcept>
+#include <iomanip>
 
 class BitcoinExchange {
 	public:
